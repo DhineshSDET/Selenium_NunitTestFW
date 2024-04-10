@@ -103,3 +103,6 @@ E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\obj\Deb
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\obj\Debug\net8.0\SeleniumWebTest.pdb
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\obj\Debug\net8.0\SeleniumWebTest.genruntimeconfig.cache
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\obj\Debug\net8.0\ref\SeleniumWebTest.dll
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\AngleSharp.dll
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\ICSharpCode.SharpZipLib.dll
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\WebDriverManager.dll

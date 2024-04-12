@@ -20,9 +20,21 @@ SetUp - Indicates a method of a TestFixture called immediately before each test 
 Test - Marks a method of a TestFixture that represents a test
 TearDown - Indicates a method of a TestFixture called immediately after each test method
 
-[Other]
-Timeout - Provides a timeout value in milliseconds for test cases
-Retry - Causes a test to rerun if it fails, up to a maximum number of times
-MaxTime - Specifies the maximum time in milliseconds for a test case to succeed
-
 /*Selenium*/
+Browser Config
+
+Browser Manage
+
+Xpath/Css Selector
+
+Dropdown selection
+Radio Icon
+Checkbox selection
+Enter Values
+Clear Values
+
+Waits/Timeouts
+  - Thread.Sleep
+  - Implicit Wait
+  - Explicit Wait
+

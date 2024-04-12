@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xAx/7s348VdDcODlouyL16eUivSZdXmKXZr8UNUgSh2Xpm0IorufrK7h7UZwyFVDk83FSeYpw4sLHKSdq++CEg==",
+  "dgSpecHash": "UezvF1sm1AIa//tLy3oW0utbRnoa44RPs8p5RlXHLyJZQCeaIDh3vbuBKN1NRpN/IGd9MYjwpWlAbVEbQbmOUQ==",
   "success": true,
   "projectFilePath": "E:\\Personal Repo Github\\Selenium_NunitTestFW\\DhineshSDET\\SeleniumWebTest\\SeleniumTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\D826922\\.nuget\\packages\\anglesharp\\1.1.0\\anglesharp.1.1.0.nupkg.sha512",
     "C:\\Users\\D826922\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\D826922\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\D826922\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
     "C:\\Users\\D826922\\.nuget\\packages\\microsoft.net.test.sdk\\17.6.0\\microsoft.net.test.sdk.17.6.0.nupkg.sha512",
     "C:\\Users\\D826922\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",

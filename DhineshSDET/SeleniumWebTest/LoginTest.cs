@@ -1,37 +1,64 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium.Chrome;
 using WebDriverManager.DriverConfigs.Impl;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Firefox;
 
 namespace SeleniumTest
 {
     public class LoginTest
     {
         private IWebDriver driver;
+        public String GetUrl = "https://rahulshettyacademy.com/loginpagePractise/";
+        private String expectedEmptyErrorMessage = "Empty username/password.";
+        private String expectedIncorrectErrorMessage = "Incorrect username/password.";
+        private String expectedHomePageTitle = "ProtoCommerce";
+        private String expectedUrl = "https://rahulshettyacademy.com/documents-request";
 
         [SetUp]
         public void StartBrowser()
         {
-            new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-            driver = new ChromeDriver(); //Chrome browser object instance
+            SelectBrowser("Chrome"); 
             driver.Manage().Window.Maximize(); //maximize browser
-            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5); // Implicit wait
-           /* WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMilliseconds(4)); //Explicitly wait for WebElement to present
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementValue(
-                driver.FindElement(By.XPath("//input[@name='signin']")), "Sign In"));*/
+            driver.Url = GetUrl;
+        }
+        public void SelectBrowser(String browser)
+        {
+            switch (browser)
+            {
+                case "Chrome":
+                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    driver = new ChromeDriver(); //object for chrome browser
+                    break;
+                case "Edge":
+                    new WebDriverManager.DriverManager().SetUpDriver(new EdgeConfig());
+                    driver = new EdgeDriver(); //object for Edge browser
+                    break;
+                case "Firefox":
+                    new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
+                    driver = new FirefoxDriver(); //object for Firefox browser
+                    break;
+                default:
+                    TestContext.Progress.WriteLine("Incorrect browser is mentioned");
+                    break;
+            }
+        }
+        [Test]
+        public void LoginPageWebElementTest()
+        {
+            bool userNameDisplayed = driver.FindElement(By.XPath("//input[@id='username']")).Displayed;
+            bool passwordDisplayed = driver.FindElement(By.XPath("//input[@id='password']")).Displayed;
+            bool termsCheckboxDisplayed = driver.FindElement(By.XPath("//input[@id='terms']")).Displayed;
+            bool isAdminRadioButtonDisplayed = driver.FindElement(By.XPath("//span[normalize-space()='Admin']")).Displayed;
+            bool isUserRadioButtonDisplayed = driver.FindElement(By.XPath("//span[normalize-space()='User']")).Displayed;
+            bool isLoginAsDisplayed = driver.FindElement(By.XPath("//select[@class='form-control']")).Displayed;
+            bool isAllCondition = userNameDisplayed && passwordDisplayed && termsCheckboxDisplayed && isAdminRadioButtonDisplayed && isUserRadioButtonDisplayed && isLoginAsDisplayed;
+            Assert.That(isAllCondition, Is.True);
         }
         [Test]
         public void LoginWithCorrectUsernameCorrectPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
-
             //Verify login is successful after entering correct username and password
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
@@ -44,9 +71,6 @@ namespace SeleniumTest
         [Test]
         public void LoginWithUsernameWithoutPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedEmptyErrorMessage = "Empty username/password.";
-
             //Verify error message by clicking signin button with username and without password
             driver.FindElement(By.Name("username")).SendKeys("RahulShetty"); //Enter Username
             driver.FindElement(By.Name("signin")).Click();//Click Sign In
@@ -60,9 +84,6 @@ namespace SeleniumTest
         [Test]
         public void LoginWithoutUsernameWithPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedEmptyErrorMessage = "Empty username/password.";
-
             //Verify error message by clicking signin button without username and with password
             driver.FindElement(By.Name("username")).Clear();
             driver.FindElement(By.Name("password")).SendKeys("1245398"); //Enter Password
@@ -74,9 +95,6 @@ namespace SeleniumTest
         [Test]
         public void LoginWithoutUsernameWithoutPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedEmptyErrorMessage = "Empty username/password.";
-
             //Verify error message by clicking signin button without username and without password
             driver.FindElement(By.Name("signin")).Click();//Click Sign In
             String emptyErrorMessage = driver.FindElement((By.ClassName("alert"))).Text; //Empty username/password. Error Message
@@ -86,9 +104,6 @@ namespace SeleniumTest
         [Test]
         public void LoginWithIncorrectUsernameCorrectPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedIncorrectErrorMessage = "Incorrect username/password.";
-
             //Verify error message by entering incorrect username and correct password
             driver.FindElement(By.Name("username")).SendKeys("RahulShetty"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
@@ -101,9 +116,6 @@ namespace SeleniumTest
         [Test]
         public void LoginWithCorrectUsernameIncorrectPassword()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedIncorrectErrorMessage = "Incorrect username/password.";
-
             //Verify error message by entering correct username and incorrect password
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("121345"); //Enter Password
@@ -116,9 +128,6 @@ namespace SeleniumTest
         [Test]
         public void LoginAsStudent()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
-
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
             IWebElement dropdownElement = driver.FindElement(By.CssSelector("select.form-control"));
@@ -133,8 +142,6 @@ namespace SeleniumTest
         [Test]
         public void LoginAsTeacher()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
 
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
@@ -150,9 +157,6 @@ namespace SeleniumTest
         [Test]
         public void LoginAsConsultant()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
-
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
             IWebElement dropdownElement = driver.FindElement(By.CssSelector("select.form-control"));
@@ -167,9 +171,6 @@ namespace SeleniumTest
         [Test]
         public void LoginAsAdmin()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
-
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
             IList<IWebElement> radioList = driver.FindElements(By.CssSelector("input[name='radio']"));
@@ -187,12 +188,9 @@ namespace SeleniumTest
             String actualHomePageTitle = driver.Title;
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
-
         [Test]
         public void LoginAsUser()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedHomePageTitle = "ProtoCommerce";
             driver.FindElement(By.Name("username")).SendKeys("rahulshettyacademy"); //Enter Username
             driver.FindElement(By.Name("password")).SendKeys("learning"); //Enter Password
             IList<IWebElement> radioList = driver.FindElements(By.CssSelector("input[name='radio']"));
@@ -213,24 +211,20 @@ namespace SeleniumTest
             String actualHomePageTitle = driver.Title;
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
-
         [Test]
         public void FreeAccessToInterviewQuesLinkText()
         {
-            driver.Url = "https://rahulshettyacademy.com/loginpagePractise/";
-            String expectedUrl = "https://rahulshettyacademy.com/documents-request";
-
             IWebElement freeLinkText = driver.FindElement((By.LinkText("Free Access to InterviewQues/ResumeAssistance/Material")));
             String actualUrl = freeLinkText.GetAttribute("href");
             TestContext.Progress.WriteLine(actualUrl); //Print Url
             Assert.That(actualUrl, Is.EqualTo(expectedUrl));//Assert
             freeLinkText.Click();
-
         }
         [TearDown]
-        public void TearDownBrowser()
+        public void StopBrowser()
         {
-            driver.Quit();
+            driver.Close(); // Current instance window is closed
+            //driver.Quit(); // all windows are closed
         }
     }
 }

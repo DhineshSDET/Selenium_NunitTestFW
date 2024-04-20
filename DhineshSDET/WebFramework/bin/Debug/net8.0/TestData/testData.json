@@ -1,0 +1,8 @@
+﻿{
+  "username": "rahulshettyacademy",
+  "password": "learning",
+  "usernameIncorrect": "rahulshetty",
+  "passwordIncorrect": "learn",
+  "products": [ "iphone X", "Blackberry" ],
+  "searchtext": "ind"
+}

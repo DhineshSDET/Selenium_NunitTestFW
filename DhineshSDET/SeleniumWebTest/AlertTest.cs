@@ -85,8 +85,7 @@ namespace SeleniumTest
         [TearDown]
         public void StopBrowser()
         {
-            driver.Close(); // Current instance window is closed
-            //driver.Quit(); // all windows are closed
+            driver.Quit(); // all windows are closed
         }
     }
 }

@@ -7,6 +7,7 @@ Selenium Dependencies
   -  DotNetSeleniumExtras.WaitHelpers
   -  DotNetSeleniumExtras.PageObjects
   -  DotNetSeleniumExtras.PageObjects.Core
+  -  AventStack.ExtentReports
 
 Nunit Test Framework
   Used below Annotations
@@ -17,6 +18,8 @@ Nunit Test Framework
     -  [Parallelizable(ParallelScope.All)]
     -  [TestCaseSource("AddTestData")]
     -  [TestCase("username", "password")]  
+    -  [Category("Smoke")]
+    -  [OneTimeSetUp]
     
 Built Base Test class which handles below
   -  static driver initialization with Thread safe for parallel run
@@ -27,9 +30,9 @@ Built Base Test class which handles below
 Test Data Strategy
   -  Json structure file to select by key
   -  Created JsonReader class which has custom methods to handle String Data and String[] data to parse
-  -  Get list of strings and conver to array and pass token/key to fetch json value
+  -  Get list of strings and convert to array and pass token/key to fetch json value
   -  Created static IEnumerable List method to fecth parameterized data from json file
-  -  Used yield to wait for each data to fetch and return
+  -  Used yield to wait for each data to retrieve and return
     
 Page Object Design Pattern 
   -  Each page class with constructor to handle driver setting using PageFactory class
@@ -48,8 +51,23 @@ Assertion
     -  Assert.AreEqual
     -  StringAssert 
 
-Each Test adheres to Arrange Act Assert Test Pattern
-Object instance for each Test methods
-Wait handle of Explicit wait
+Parallel Execution
+    -  All data sets of Test Methods in parallel
+    -  All test methods in one class in parallel
+    -  All test class in one project in parallel
+
+Test Run
+    -  Test Explorer
+    -  Command Line CLI with Test Params
+    -  Jenkins
+
+Test Report
+    -  Used Extent Reports to generate HTML test report
+    -  Capture Screenshot when test are fail and base64.png available in report
+
+Test Pattern
+    -  Each Test adheres to Arrange Act Assert 
+
+
 
 

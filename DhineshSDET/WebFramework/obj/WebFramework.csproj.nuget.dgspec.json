@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[3.11.0, )"
             },
+            "ExtentReports.Core": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.6.0, )"

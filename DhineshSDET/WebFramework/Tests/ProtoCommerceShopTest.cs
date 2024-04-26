@@ -10,11 +10,11 @@ using WebFramework.Utilities;
 
 namespace WebFramework.Tests
 {
-    [Parallelizable(ParallelScope.Self)]
+    [Parallelizable(ParallelScope.All)]
     public class ProtoCommerceShopTest : BaseTest
     {
         
-        [Test]
+        [Test,Category("Regression")]
         public void LoginPage()
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
@@ -32,7 +32,7 @@ namespace WebFramework.Tests
             //Assert
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
-        [Test]
+        [Test, Category("Regression")]
         public void HomePage()
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
@@ -45,7 +45,7 @@ namespace WebFramework.Tests
             //Assert
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
-        [Test]
+        [Test, Category("Smoke")]
         public void CheckoutTwoProducts()
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
@@ -77,9 +77,9 @@ namespace WebFramework.Tests
         }
         //[TestCase("rahulshettyacademy", "learning")]
         //[TestCase("rahulshetty", "learning")]
-        [Test]
+        [Test, Category("Smoke")]
         [TestCaseSource("AddTestData")]
-        //[Parallelizable(ParallelScope.All)]
+        [Parallelizable(ParallelScope.All)]
         public void E2ECommerceTest(String username, String password, String[] expectedProduct)
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";

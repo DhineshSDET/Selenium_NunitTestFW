@@ -41,7 +41,7 @@ namespace WebFramework.PageObjects
         }
         public void WaitForPageDisplay()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));// Explicit wait
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));// Explicit wait
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.LinkText("India")));
         }
         public IWebElement SelectLocation()

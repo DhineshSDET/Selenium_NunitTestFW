@@ -12,7 +12,7 @@ using WebFramework.Utilities;
 
 namespace WebFramework.Tests
 {
-    [Parallelizable(ParallelScope.Self)]
+    [Parallelizable(ParallelScope.All)]
     public class AlertTest : BaseTest
     {
         [Test] 

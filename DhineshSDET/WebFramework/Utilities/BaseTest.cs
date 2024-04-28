@@ -44,7 +44,7 @@ namespace WebFramework.Utilities
 
             SelectBrowser(browserName);
             driver.Value.Manage().Window.Maximize();
-            
+
         }
         public IWebDriver GetDriver()
         {

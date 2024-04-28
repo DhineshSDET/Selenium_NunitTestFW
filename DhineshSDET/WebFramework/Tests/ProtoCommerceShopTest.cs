@@ -15,7 +15,8 @@ namespace WebFramework.Tests
     {
         
         [Test,Category("Regression")]
-        public void LoginPage()
+        [TestCaseSource("AddTestData")]
+        public void LoginPage(String username, String password, String[] expectedProduct)
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
             //Arrange
@@ -27,34 +28,36 @@ namespace WebFramework.Tests
             Assert.That(actualLoginPageTitle, Is.EqualTo(expectedLoginPageTitle));
             //Act
             LoginPage loginPage = new LoginPage(GetDriver());
-            loginPage.ValidLogin("rahulshettyacademy", "learning");
+            ProductsPage productsPage = loginPage.ValidLogin(username, password);
+            productsPage.WaitForPageDisplay();
             string actualHomePageTitle = driver.Value.Title;
             //Assert
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
         [Test, Category("Regression")]
-        public void HomePage()
+        [TestCaseSource("AddTestData")]
+        public void HomePage(String username, String password, String[] expectedProduct)
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
             //Arrange
             string expectedHomePageTitle = "ProtoCommerce";
             //Act
             LoginPage loginPage = new LoginPage(GetDriver());
-            loginPage.ValidLogin("rahulshettyacademy", "learning");
+            loginPage.ValidLogin(username, password);
             string actualHomePageTitle = driver.Value.Title;
             //Assert
             Assert.That(actualHomePageTitle, Is.EqualTo(expectedHomePageTitle));
         }
         [Test, Category("Smoke")]
-        public void CheckoutTwoProducts()
+        [TestCaseSource("AddTestData")]
+        public void CheckoutTwoProducts(String username, String password, String[] expectedProduct)
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
             //Arrange
-            string[] expectedProduct = { "iphone X", "Blackberry" }; // expected string list
             string[] actualProduct = new string[2];
             //Act
             LoginPage loginPage = new LoginPage(GetDriver());
-            ProductsPage productsPage = loginPage.ValidLogin("rahulshettyacademy", "learning");
+            ProductsPage productsPage = loginPage.ValidLogin(username, password); 
             productsPage.WaitForPageDisplay();
             IList<IWebElement> products = productsPage.Getcards();
             foreach (IWebElement product in products)// Each WebElement loop
@@ -79,7 +82,7 @@ namespace WebFramework.Tests
         //[TestCase("rahulshetty", "learning")]
         [Test, Category("Smoke")]
         [TestCaseSource("AddTestData")]
-        [Parallelizable(ParallelScope.All)]
+        //[Parallelizable(ParallelScope.All)]
         public void E2ECommerceTest(String username, String password, String[] expectedProduct)
         {
             driver.Value.Url = "https://rahulshettyacademy.com/loginpagePractise/";
@@ -126,8 +129,8 @@ namespace WebFramework.Tests
         public static IEnumerable<TestCaseData> AddTestData()
         {
             yield return new TestCaseData(GetDataParser().ExtractStringData("username"),GetDataParser().ExtractStringData("password"),GetDataParser().ExtractArrayData("products"));
-            yield return new TestCaseData(GetDataParser().ExtractStringData("username"),
-                GetDataParser().ExtractStringData("password"), GetDataParser().ExtractArrayData("products"));
+            //yield return new TestCaseData(GetDataParser().ExtractStringData("username"),
+                //GetDataParser().ExtractStringData("password"), GetDataParser().ExtractArrayData("products"));
         }
     }
 }

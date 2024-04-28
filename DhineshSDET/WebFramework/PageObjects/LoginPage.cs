@@ -38,12 +38,13 @@ namespace WebFramework.PageObjects
             return password;
         }
 
-        public ProductsPage ValidLogin(String userName, String passWord)
+        public ProductsPage ValidLogin(String userName, String passWord, bool isClick = true)
         {
             GetUserName().SendKeys(userName);
             GetPassword().SendKeys(passWord);
             GetCheckBox().Click();
-            GetSignIn().Click();
+            if(isClick==true)
+                GetSignIn().Click();
             Thread.Sleep(3000);
             return new ProductsPage(driver);
         }

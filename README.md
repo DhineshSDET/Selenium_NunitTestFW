@@ -9,8 +9,7 @@ Selenium Dependencies
   -  DotNetSeleniumExtras.PageObjects.Core
   -  AventStack.ExtentReports
 
-Nunit Test Framework
-  Used below Annotations
+Nunit Test Framework Used below Annotations
     -  [Test]
     -  [SetUp]
     -  [TearDown]
@@ -21,7 +20,7 @@ Nunit Test Framework
     -  [Category("Smoke")]
     -  [OneTimeSetUp]
     
-Built Base Test class which handles below,
+Built Base Test class which handles below
   -  static driver initialization with Thread safe for parallel run
   -  Custom method to choose browser
   -  App.config to set key value pair for browser selection
@@ -68,7 +67,7 @@ Test Report
 Test Pattern
     -  Each Test adheres to the //Arrange //Act //Assert 
 
-Jenkins Pipeline:
+Jenkins Pipeline
     -  Configure Jenkins pipeline to pick this git repo - https://github.com/DhineshSDET/Selenium_NunitTestFW.git
     -  Choice parameters could be added to select a browser during the selection
     -  Change branch specifier from */master to */main

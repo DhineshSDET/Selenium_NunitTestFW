@@ -21,7 +21,7 @@ Nunit Test Framework
     -  [Category("Smoke")]
     -  [OneTimeSetUp]
     
-Built Base Test class which handles below
+Built Base Test class which handles below,
   -  static driver initialization with Thread safe for parallel run
   -  Custom method to choose browser
   -  App.config to set key value pair for browser selection
@@ -63,11 +63,16 @@ Test Run
 
 Test Report
     -  Used Extent Reports to generate HTML test report
-    -  Capture Screenshot when test are fail and base64.png available in report
+    -  Capture Screenshots when tests are failing and base64.png available in report
 
 Test Pattern
-    -  Each Test adheres to Arrange Act Assert 
+    -  Each Test adheres to the //Arrange //Act //Assert 
 
-
+Jenkins Pipeline:
+    -  Configure Jenkins pipeline to pick this git repo - https://github.com/DhineshSDET/Selenium_NunitTestFW.git
+    -  Choice parameters could be added to select a browser during the selection
+    -  Change branch specifier from */master to */main
+    -  Add the below (Execute Windows batch command) under build steps and modify according to your need 
+    -  dotnet test DhineshSDET/WebFramework/WebFramework.csproj -- TestRunParameters.Parameter(name=\"browserName\", value=\"%browserName%\")
 
 

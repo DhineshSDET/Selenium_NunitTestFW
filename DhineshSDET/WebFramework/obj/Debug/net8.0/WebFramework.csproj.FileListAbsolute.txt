@@ -1,6 +1,6 @@
-E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\testhost.dll
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\testhost.exe
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework\bin\Debug\net8.0\NUnit3.TestAdapter.dll

@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
@@ -18,11 +19,15 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.19.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.19.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
     <PackageReference Include="WebDriverManager" Version="2.17.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WebFramework\WebFramework.csproj" />
   </ItemGroup>
+	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="App.Config" DestinationFiles="$(OutDir)\testhost.dll.config" />
+	</Target>
 
 </Project>

@@ -9,12 +9,14 @@
       "SeleniumTest/1.0.0": {
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
+          "ExtentReports.Core": "1.0.3",
           "Microsoft.NET.Test.Sdk": "17.6.0",
           "NUnit": "3.13.3",
           "NUnit.Analyzers": "3.6.1",
           "NUnit3TestAdapter": "4.2.1",
           "Selenium.Support": "4.19.0",
           "Selenium.WebDriver": "4.19.0",
+          "System.Configuration.ConfigurationManager": "8.0.0",
           "WebDriverManager": "2.17.2",
           "WebFramework": "1.0.0",
           "coverlet.collector": "6.0.0"

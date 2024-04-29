@@ -21,7 +21,7 @@ namespace WebFramework.Utilities
         {
             string workingDirectory = Environment.CurrentDirectory;
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-            string reportPath = projectDirectory + "//index.html";
+            string reportPath = projectDirectory +"\\Report"+ "//index.html";
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             Extent.AttachReporter(htmlReporter);
             Extent.AddSystemInfo("Host Name","Local host");

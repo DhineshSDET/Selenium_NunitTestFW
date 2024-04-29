@@ -1,10 +1,10 @@
-E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\CoverletSourceRootsMapping_SeleniumTest
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\testhost.dll
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\WebFramework.deps.json
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\WebFramework.runtimeconfig.json
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\testhost.exe
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\NUnit3.TestAdapter.dll
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\NUnit3.TestAdapter.pdb
@@ -13,6 +13,7 @@ E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Deb
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\nunit.engine.core.dll
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\testcentric.engine.metadata.dll
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\TestData\testData.json
+E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\SeleniumTest.dll.config
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\SeleniumTest.deps.json
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\SeleniumTest.runtimeconfig.json
 E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\SeleniumWebTest\bin\Debug\net8.0\SeleniumTest.dll

@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[3.11.0, )"
             },
+            "ExtentReports.Core": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.6.0, )"
@@ -75,6 +79,10 @@
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.19.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "WebDriverManager": {
               "target": "Package",

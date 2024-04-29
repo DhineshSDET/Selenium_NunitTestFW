@@ -45,6 +45,20 @@ Folder structure
   - PageObjects
   - Tests
 
+Selenium WebElement Test
+  - Login Scenario's
+  - Handling Alert
+  - Handling Popup
+  - Auto Suggestion Search
+  - Drag and drop
+  - Hover
+  - Move to element
+  - Switch Frames
+  - Sort Table
+  - Switch Windows
+  - Checkout two products
+  - End to End e-commerce Order creation
+
 Assertion 
   - Assert.That
   - Assert.AreEqual

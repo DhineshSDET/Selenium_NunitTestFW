@@ -78,8 +78,6 @@ namespace WebFramework.Tests
             Assert.AreEqual(expectedProduct, actualProduct);
 
         }
-        //[TestCase("rahulshettyacademy", "learning")]
-        //[TestCase("rahulshetty", "learning")]
         [Test, Category("Smoke")]
         [TestCaseSource("AddTestData")]
         //[Parallelizable(ParallelScope.All)]

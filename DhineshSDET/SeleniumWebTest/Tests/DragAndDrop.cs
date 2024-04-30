@@ -23,7 +23,7 @@ namespace SeleniumTest
         [Test]
         public void DragAndDrop()
         {
-            Thread.Sleep(8000);
+            //Thread.Sleep(8000);
             driver.Value.Url = DragandDropUrl;
             Actions a = new Actions(driver.Value);
             Thread.Sleep(3000);

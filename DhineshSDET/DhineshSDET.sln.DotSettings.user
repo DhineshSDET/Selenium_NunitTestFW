@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3f719d24_002D0991_002D4aa2_002D81ac_002D4794aa593d0f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests in category 'Regression'" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;And&gt;&#xD;
+    &lt;Category&gt;Regression&lt;/Category&gt;&#xD;
+    &lt;Not&gt;&#xD;
+      &lt;Or&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;NUnit3x::3A9894E1-4F87-4066-B119-C797EFF17604::net8.0::WebFramework.Tests.ProtoCommerceShopTest.HomePage("rahulshettyacademy","learning",["iphone X", "Blackberry"])&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+        &lt;Project Location="E:\Personal Repo Github\Selenium_NunitTestFW\DhineshSDET\WebFramework" Presentation="&amp;lt;WebFramework&amp;gt;" /&gt;&#xD;
+      &lt;/Or&gt;&#xD;
+    &lt;/Not&gt;&#xD;
+  &lt;/And&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
